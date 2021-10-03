@@ -1,5 +1,5 @@
 # pactTestingKarthickCourse-gl
-Linux version adapted from Karthick's code provided on https://gorillalogic.udemy.com/course/api-testing-with-restsharp-and-specflow-in-csharp/
+Linux version adapted from Karthick's code provided on https://gorillalogic.udemy.com/course/api-testing-with-restsharp-and-specflow-in-csharp/ by Juan Fonseca-Solis 2021.
 
 ## Employee API 
 * Run the API: `cd EmployeeAPI/;dotnet run`
