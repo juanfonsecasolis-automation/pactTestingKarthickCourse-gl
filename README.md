@@ -18,3 +18,37 @@ INFO  WEBrick::HTTPServer#start: pid=71687 port=9224
 
 Correctas! - Con error:     0, Superado:     2, Omitido:     0, Total:     2, Duración: 472 ms -
 ```
+
+As declared in the ConsumerPactTest.cs, the testing checks that the API returns an employee as follows:
+```
+_mockProviderService
+                .Given("Employee Details for Id '1'")
+                .UponReceiving("A GET request to retrieve the employee details")
+                .With(new ProviderServiceRequest
+                {
+
+                    Method = HttpVerb.Get,
+                    Path = "/employee/1",
+                    Headers = new Dictionary<string, object>
+                    {
+                        { "Accept", "application/json" }
+                    }
+
+
+                })
+                .WillRespondWith(new ProviderServiceResponse
+                {
+                    Status = 200,
+                    Headers = new Dictionary<string, object>
+                    {
+                        { "Content-Type", "application/json; charset=utf-8" }
+                    },
+                    Body = new //NOTE: Note the case sensitivity here, the body will be serialised as per the casing defined
+                    {
+                        id = 1,
+                        employeeName = "Karthik",
+                        email = "karthik@techgeek.co.in",
+                        city = "Auckland"
+                    }
+                });
+```
