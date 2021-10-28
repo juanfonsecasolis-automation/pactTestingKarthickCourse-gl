@@ -9,7 +9,7 @@ dotnet add ContactTesting/ContactTesting.csproj reference EmployeeAPI/EmployeeAP
 ```
 
 ## 2 Project set-up
-None
+* None
 
 ## 3 Run
 
