@@ -1,12 +1,24 @@
 # pactTestingKarthickCourse-gl
-Linux version adapted from Karthick's code provided on https://gorillalogic.udemy.com/course/api-testing-with-restsharp-and-specflow-in-csharp/ by Juan Fonseca-Solis 2021.
+Juan Fonseca-Solis 2021. Linux version adapted from Karthick's code provided on https://gorillalogic.udemy.com/course/api-testing-with-restsharp-and-specflow-in-csharp/.
 
-## Employee API 
+## 1 Prerequisites
+```
+dotnet add package Microsoft.EntityFrameworkCore
+dotnet add package Microsoft.EntityFrameworkCore.InMemory
+dotnet add ContactTesting/ContactTesting.csproj reference EmployeeAPI/EmployeeAPI.csproj
+```
+
+## 2 Project set-up
+None
+
+## 3 Run
+
+### 3.1 API run
 * Run the API: `cd EmployeeAPI/;dotnet run`
 * Request:`https://localhost:5001/api/employee/1`
 * Response: `{"id":1,"employeeName":"Karthik","email":"karthik@techgeek.co.in","city":"Auckland"}`
 
-## Pact testing
+### 3.2 Tests
 Execute on the root folder the command `dotnet build` to create files "service_consumer-employeelist.json" (the contract) and "employeelist_mock_service.log" (logs) in the /tmp directory. Then, execute `dotnet test`, the result should be something like this:
 
 ```
